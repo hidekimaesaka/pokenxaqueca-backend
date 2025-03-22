@@ -1,15 +1,13 @@
 from flask import Flask
 
-from flask_cors import CORS
-
-from app.routes import pokemon
+from app.routes import health, apod
 
 
 def create_app():
     app = Flask(__name__)
-    CORS(app)
 
     # routes
-    pokemon.init(app)
+    health.init(app)
+    apod.init(app)
 
     return app
